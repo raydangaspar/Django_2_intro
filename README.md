@@ -4,15 +4,15 @@ Prática para estudo do curso Introdução ao Django 2: Modelos, Rotas e Views
 
 Alura cursos online
 
-###### Versão do python utilizada 
+## Versão do python utilizada 
 
 Python 3.8.2
 
-###### Banco de dados
+## Banco de dados
 
 PostgreSQL
 
-###### Pacotes necessários
+## Pacotes necessários
 ```
 pip install psycopg2
 pip install psycopg2-binary
