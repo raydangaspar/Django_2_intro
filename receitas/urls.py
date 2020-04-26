@@ -6,5 +6,5 @@ from . import views
 # Terceiro parâmetro namespace do aplicativo para a entrada url
 urlpatterns = [
     path('', views.index, name='index'),
-    path('receita', views.receita, name='receita')
+    path('<int:receita_id>', views.receita, name='receita')
 ]
