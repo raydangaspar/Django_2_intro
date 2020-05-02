@@ -6,7 +6,7 @@ from .models import Receita
 def index(request):
 
     # pip install pylint-django para sumir o erro de Receita
-    receitas = Receita.objects.all()
+    receitas = Receita.objects.filter(publicada=True)
 
     dados = {
         'receitas' : receitas
