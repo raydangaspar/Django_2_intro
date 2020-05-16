@@ -5,6 +5,8 @@ from receitas.models import Receita
 
 # Create your views here.
 def cadastro(request):
+    # Docstrings fornecem explicacção de como a classe/método funciona
+    """Cadastra uma nova pessoa no sistema"""
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
@@ -34,6 +36,7 @@ def cadastro(request):
         return render(request, 'usuarios/cadastro.html')
 
 def login(request):
+    """Realiza o login de uma pessoa no sistema"""
     if request.method == 'POST':
         email = request.POST['email']
         senha = request.POST['senha']
@@ -51,10 +54,12 @@ def login(request):
     return render(request, 'usuarios/login.html')
 
 def logout(request):
+    """Realiza o logout de um usuário no sistema"""
     auth.logout(request)
     return redirect('index')
 
 def dashboard(request):
+    """Exibe a dashboard do usuário logado"""
     if request.user.is_authenticated:
         id_pessoa = request.user.id
         receitas = Receita.objects.order_by('-date_receita').filter(pessoa=id_pessoa)
@@ -68,7 +73,9 @@ def dashboard(request):
         return redirect('index')
 
 def campo_vazio(campo):
+    """Retorna se o campo do formulário está vazio"""
     return not campo.strip()
 
 def senhas_nao_sao_iguais(senha, senha2):
+    """Retorna boolean se as senhas são diferentes"""
     return senha != senha2
