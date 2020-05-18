@@ -5,7 +5,7 @@ from receitas.models import Receita
 
 # Create your views here.
 def cadastro(request):
-    # Docstrings fornecem explicacção de como a classe/método funciona
+    # Docstrings fornecem explicacção de como a classe/função/método funciona
     """Cadastra uma nova pessoa no sistema"""
     if request.method == 'POST':
         nome = request.POST['nome']
